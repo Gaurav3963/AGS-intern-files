@@ -2,6 +2,10 @@
 
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+    <br><h4>File Uploaded Status : {{status}} </h4><br>
     <input type='file' name=document>
     <button type='submit'>Upload file</button>
 </form>
+
+
+<a href="/displaytable"> Show table data</a>

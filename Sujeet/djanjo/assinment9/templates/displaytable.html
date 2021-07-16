@@ -1,0 +1,20 @@
+<h2>Table: {name}<h2>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Transaction ID</th>
+        <th scope="col">Total_Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for i in table%}
+      <tr>
+        <th scope="row">{{i.NAME}}</th>
+        <td>{{i.ID}}</td>
+        <td>{{i.Total_Amount}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>

@@ -4,10 +4,10 @@ from .processtable import process_table, display_table
 
 def index(request):
     if request.method == "POST":
-        file1 = request.FILES['myfile']
+        file1 = request.FILES['document']
         a = process_table(file1)
-        
-        return render(request,'index.html',{'status':"Uploaded"})
+    return render(request,'index.html')
 
 def tableview(request):
     var = display_table("tabledata")
+    return render(request,'displaytable.html',{'table':var,'Name':"tabledata"})
