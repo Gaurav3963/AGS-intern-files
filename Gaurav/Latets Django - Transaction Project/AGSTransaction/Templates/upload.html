@@ -1,0 +1,13 @@
+<html>
+<body>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br>
+    <h4>File Uploaded Status : {{status}} </h4>
+    <br>
+    <label >Select a file:</label> <br><br>        
+    <input type="file" id="myfile" name="myfile"><br><br>
+    <input type="submit" value="Submit" onclick="showFileName()">
+</form>
+</body>
+</html>
