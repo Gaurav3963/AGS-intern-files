@@ -61,26 +61,6 @@
     <br>
 
     <div class="form-check">
-        <input class="form-check-input" style="margin-top:12px;" type="radio" value="tranCardNo"  id="flexRadioDefault1" name="tname">
-        <label class="form-check-label" for="flexRadioDefault1">
-          Card Number   
-        </label>
-        <input type="text" class="form-control"  style="width : 50%;display : inline;padding-left: 3px;padding-right: 3px;margin-left: 15px;" name="cardNo" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-
-    <br>
-
-    <div class="form-check">
-        <input class="form-check-input" style="margin-top:12px;" type="radio" value="tranFromAccount"  id="flexRadioDefault1" name="tname">
-        <label class="form-check-label" for="flexRadioDefault1">
-          From Account   
-        </label>
-        <input type="text" class="form-control"  style="width : 50%;display : inline;padding-left: 3px;padding-right: 3px;margin-left: 15px;" name="fromAccount" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-
-    <br>
-
-    <div class="form-check">
         <input class="form-check-input" style="margin-top:12px;" type="radio" value="tranMerchantID"  id="flexRadioDefault1" name="tname">
         <label class="form-check-label" for="flexRadioDefault1">
           Merchant ID 
@@ -92,14 +72,15 @@
     <br>
 
       <div class="p-3 mb-2 bg-primary text-white">What all data would you like to see</div>
-
   {%for i in options%}
+    <div class="col-sm" style="width:200px">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value={{i}} id="flexCheckDefault" name={{i}}>
         <label class="form-check-label" for="flexCheckDefault">
           {{i}}
         </label>
       </div>
+    </div>
   {%endfor%}
       <br>
       <br>
@@ -116,7 +97,10 @@
       <table class="table table-striped">
         <thead>
           <tr>
+            <th scope="col">Date</th>
             <th scope="col">Transaction ID</th>
+            <th scope="col">Terminal ID</th>
+            <th scope="col">Merchant ID</th>
             {%for i in option%}
               <th scope="col">{{i}}</th>
             {%endfor%}
@@ -125,7 +109,10 @@
         <tbody>
           {%for i in data%}
             <tr>
+              <td>{{i.Date}}</td>
               <td>{{i.TransactionID}}</td>
+              <td>{{i.TerminalID}}</td>
+              <td>{{i.MerchantID}}</td>
             {%for j in option%}
                 {%for key, value in i.items%}
                     {%ifequal key j%}
